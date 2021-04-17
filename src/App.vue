@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Hello {{ name }}</h1>
+  <h1 v-text="name"></h1>
+  <p v-html="htmlBind"></p>
+  <button v-bind:disabled="isDisabled">Bind</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  data() {
+    return {
+      name: "Mason",
+      htmlBind: "<b>Hello World</b>",
+      isDisabled: true
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
+* {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  top: 0;
+  bottom: 0;
 }
 </style>
